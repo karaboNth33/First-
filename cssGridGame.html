@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spider Grids</title>
     <link rel="stylesheet" href="CGG.css">
 </head>
 <body>
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div id="Instruction">
-        <p>Welcome to Spider Grid, where you write CSS code to catch your prey! Highlight only the areas that have insects by using the <code>grid-column-start</code> property.</p><p>For example, <code>grid-column-start: 3;</code> will highlight the area starting at the 3rd vertical grid line, which is another way of saying the 3rd vertical border from the left in the grid.<img src="https://code.org/api/hour/begin_codepip_grid.png"></p>
+
       </div>
       <div id="editor">
         <div id="css">
@@ -47,10 +47,10 @@
 
 #highlight {
 </pre>
-          <textarea id="code" autofocus autocapitalize="none" data-codes;=""></textarea>
+          <textarea id="code" autofocus autocapitalize="none"></textarea>
           <pre id="after">}</pre>
         </div>
-        <button id="next" class="translate">Next</button>
+        <button id="next" onclick="logic()">Next</button>
       </div>
     </section>
     <section id="playgroud">
@@ -91,43 +91,71 @@
                   <span class="plot"></span>
          
             </div>
-             <div id="soil">
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
-          <span class="plot"></span>
+            <div id="soil">
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
+                <span class="plot"></span>
         
-        </div>
+             </div>
         
     </section>
+    <script>
+      var code= document.getElementById("code").value;
+      var sample="grid-column-start: 3;";
+      document.getElementById("Instruction").innerHTML=
+
+      function instruct(){
+        Instruction
+      }
+
+      function logic(){
+        if(code=sample){
+          alert("Correct");
+          
+        }
+        else{
+          alert("Incorrect try again");
+        }
+      }
+      function logic2(){
+        if(code=sample){
+          alert("Correct");
+          
+        }
+        else{
+          alert("Incorrect try again");
+        }
+      }
+    </script>
 </body>
 </html>

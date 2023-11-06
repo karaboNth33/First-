@@ -10,6 +10,7 @@ body{
 
 #Instruction{
   color: aliceblue;
+  font-family: 'Autour One', cursive;
 }
 
 
@@ -28,7 +29,9 @@ body{
   float: right;
 }
 
-
+#garden,
+#plants,
+#soil,
 #overlay {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
