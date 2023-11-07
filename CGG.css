@@ -29,8 +29,7 @@ body{
   float: right;
 }
 
-#garden,
-#plants,
+
 #soil,
 #overlay {
   display: grid;

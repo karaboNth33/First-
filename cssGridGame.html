@@ -33,7 +33,12 @@
         </div>
       </div>
       <div id="Instruction">
-        <p>Welcome to Spider Grid, where you write CSS code to catch your prey! Highlight only the areas that have insects by using the <code>grid-column-start</code> property.</p><p>For example, <code id="task">grid-column-start: 3;</code> will highlight the area starting at the 3rd vertical grid line, which is another way of saying the 3rd vertical border from the left in the grid.<img src="https://code.org/api/hour/begin_codepip_grid.png"></p>
+        <div id="Instruct1">
+          <p>Welcome to Spider Grid, where you write CSS code to catch your prey! Highlight only the areas that have insects by using the <code>grid-column-start</code> property.</p><p>For example, <code id="task">grid-column-start: 3;</code> will highlight the area starting at the 3rd vertical grid line, which is another way of saying the 3rd vertical border from the left in the grid.<img src="https://code.org/api/hour/begin_codepip_grid.png"></p>
+        </div>
+        <div id="Instruct2" style="display: none;">
+           <p>When <code>grid-column-start</code> is used alone, the grid item by default will span exactly one column. However, you can extend the item across multiple columns by adding the <code>grid-column-end</code> property.</p><p>Using <code>grid-column-end</code>, water all of your carrots while avoiding the dirt. We don\'t want to waste any water! Note that the carrots start at the 1st vertical grid line and end at the 4th.</p>
+        </div>
       </div>
       <div id="editor">
         <div id="css">
@@ -42,12 +47,12 @@
   #web {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%
   } 
 
 #highlight {
 </pre>
-          <textarea id="code" autofocus autocapitalize="none"></textarea>
+          <input type="text" id="code" autofocus autocapitalize="none">
           <pre id="after">}</pre>
         </div>
         <button id="next" onclick="logic()">Next</button>
@@ -130,23 +135,33 @@
         
     </section>
     <script>
-      var code= document.getElementById("code").value;
-      var sample="grid-column-start: 3;";
-      var Instruction= document.getElementById("Instruction")
+      var code= document.getElementById("code");
+      var sample="grid-column-start: 3";
+      document.getElementById("Instruct").innerHTML ="Welcome to Spider Grid, where you write CSS code to catch your prey! Highlight only the areas that have insects by using the <code>grid-column-start</code> property.</p><p>For example, grid-column-start: 3; will highlight the area starting at the 3rd vertical grid line, which is another way of saying the 3rd vertical border from the left in the grid.";
+      var a= document.getElementById("Instruct1");
+      var b= document.getElementById("Instruct2");
+
 
       function instruct(){
-        Instruction
-      }
-
-      function logic(){
-        if(code=sample){
-          alert("Correct");
-          
+        if(b.style.display === "none") {
+            b.style.display = "block";
+            a.style.display = "none";
         }
+        else{
+          b.style.display = "none";
+        }
+      }
+      function logic(){
+        if(code === "grid-column-start: 3;"){
+          alert("Correct");
+          instruct();
+        }
+      
         else{
           alert("Incorrect try again");
         }
       }
+      
       function logic2(){
         if(code=sample){
           alert("Correct");
