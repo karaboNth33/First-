@@ -33,7 +33,7 @@
         </div>
       </div>
       <div id="Instruction">
-
+        <p>Welcome to Spider Grid, where you write CSS code to catch your prey! Highlight only the areas that have insects by using the <code>grid-column-start</code> property.</p><p>For example, <code id="task">grid-column-start: 3;</code> will highlight the area starting at the 3rd vertical grid line, which is another way of saying the 3rd vertical border from the left in the grid.<img src="https://code.org/api/hour/begin_codepip_grid.png"></p>
       </div>
       <div id="editor">
         <div id="css">
@@ -132,7 +132,7 @@
     <script>
       var code= document.getElementById("code").value;
       var sample="grid-column-start: 3;";
-      document.getElementById("Instruction").innerHTML=
+      var Instruction= document.getElementById("Instruction")
 
       function instruct(){
         Instruction
