@@ -135,16 +135,14 @@
         
     </section>
     <script>
-      var code= document.getElementById("code");
-      var sample="grid-column-start: 3";
-      document.getElementById("Instruct").innerHTML ="Welcome to Spider Grid, where you write CSS code to catch your prey! Highlight only the areas that have insects by using the <code>grid-column-start</code> property.</p><p>For example, grid-column-start: 3; will highlight the area starting at the 3rd vertical grid line, which is another way of saying the 3rd vertical border from the left in the grid.";
+      const sample = "grid-column-start: 3;";
       var a= document.getElementById("Instruct1");
       var b= document.getElementById("Instruct2");
 
 
       function instruct(){
         if(b.style.display === "none") {
-            b.style.display = "block";
+            a.style.display = b;
             a.style.display = "none";
         }
         else{
@@ -152,7 +150,9 @@
         }
       }
       function logic(){
-        if(code === "grid-column-start: 3;"){
+       const code = document.getElehmentById("code").value;
+
+        if(code === sample){
           alert("Correct");
           instruct();
         }
