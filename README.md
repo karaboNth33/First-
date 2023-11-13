@@ -1,4 +1,4 @@
-My project was Css Grid game here are the specifications:
+<h1>My project was Css Grid game here are the specifications:</h1>
 CSS Grid Game with Game Logic (Karabo):
 Elevate the CSS grid game project by adding game logic using HTML and CSS only.
 Create complex puzzle challenges with win/lose conditions entirely controlled by CSS. Implement game state transitions and feedback animations for a more immersive experience.

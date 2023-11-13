@@ -37,7 +37,10 @@
           <p>Welcome to Spider Grid, where you write CSS code to catch your prey! Highlight only the areas that have insects by using the <code>grid-column-start</code> property.</p><p>For example, <code id="task">grid-column-start: 3;</code> will highlight the area starting at the 3rd vertical grid line, which is another way of saying the 3rd vertical border from the left in the grid.<img src="https://code.org/api/hour/begin_codepip_grid.png"></p>
         </div>
         <div id="Instruct2" style="display: none;">
-           <p>When <code>grid-column-start</code> is used alone, the grid item by default will span exactly one column. However, you can extend the item across multiple columns by adding the <code>grid-column-end</code> property.</p><p>Using <code>grid-column-end</code>, water all of your carrots while avoiding the dirt. We don\'t want to waste any water! Note that the carrots start at the 1st vertical grid line and end at the 4th.</p>
+           <p>When <code>grid-column-start</code> is used alone, the grid item by default will span exactly one column. However, you can extend the item across multiple columns by adding the <code>grid-column-end</code> property.</p><p>Using <code>grid-column-end</code>, eat all the insects while using the shortest. We don't want to let them run away ! Note that the insects start at the 1st vertical grid line and end at the 4th.</p>
+        </div>
+        <div id="Instruct3" style="display: none;">
+          <p>If you want to count grid lines from the right instead of the left, you can give <code>grid-column-start</code> and <code>grid-column-end</code> negative values. For example, you can set it to -1 to specify the first grid line from the right.</p><p>Try setting <code>grid-column-end</code> to a negative value.</p>
         </div>
       </div>
       <div id="editor">
@@ -55,7 +58,7 @@
           <input type="text" id="code" autofocus autocapitalize="none">
           <pre id="after">}</pre>
         </div>
-        <button id="next" onclick="logic()">Next</button>
+        <button id="next">Next</button>
       </div>
     </section>
     <section id="playgroud">
@@ -134,43 +137,76 @@
              </div>
         
     </section>
-    <script>
-      const sample = "grid-column-start: 3;";
+    <script> 
+      var sample = "grid-column-start: 3;";
+      var sample2 = "grid-column-end: 4;";
+      var sample3 = "grid-column-end: -2;";
       var a= document.getElementById("Instruct1");
       var b= document.getElementById("Instruct2");
+      var c= document.getElementById("Instruct3");
 
 
       function instruct(){
         if(b.style.display === "none") {
-            a.style.display = b;
+            b.style.display = "block";
             a.style.display = "none";
         }
         else{
           b.style.display = "none";
         }
       }
+      function instruct2() {
+        if(c.style.display === "none"){
+          c.style.display = "block";
+          a.style.display = "none";
+          b.style.display = "none";
+        }
+        else{
+          c.style.display = "none";
+        }
+      }
       function logic(){
-       const code = document.getElehmentById("code").value;
-
+        var code = document.getElementById("code").value;
         if(code === sample){
           alert("Correct");
           instruct();
+          document.getElementById("before").innerHTML = "#web {\n  display: grid;\n  grid-template-columns: 25% 25% 25% 25%;\n  grid-template-rows: 25% 25% 25% 25%;\n}\n\n#highlight {\n  grid-column-start: 1;\n"
         }
       
         else{
-          alert("Incorrect try again");
+          alert(`Incorrect try again ${code}`);
         }
       }
       
-      function logic2(){
-        if(code=sample){
+      function logic2(){ 
+        var code = document.getElementById("code").value;
+        if(code === sample2){
+          alert("Correct");
+          instruct2();
+          
+        }
+        else{
+          alert(`Incorrect try again ${code}`);
+        }
+      }
+      function logic3(){ 
+        var code = document.getElementById("code").value;
+        if(code === sample3){
           alert("Correct");
           
         }
         else{
-          alert("Incorrect try again");
+          alert(`Incorrect try again ${code}`);
         }
       }
+      const btn = document.querySelector("#next");
+      const callbacks = [logic, logic2, logic3];
+      let idx = 0;
+      btn.addEventListener("click", e => { 
+        callbacks[idx]();
+         idx = (idx + 1) % callbacks.length;
+      });
+      
     </script>
 </body>
 </html>
